@@ -1,0 +1,12 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int n,m;
+vector<string> vec;
+int main() {
+    while(cin>>n) {
+        if(n==0) break;
+        while(n--)
+    
+    }
+}
