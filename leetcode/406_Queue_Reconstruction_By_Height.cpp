@@ -7,7 +7,13 @@ bool sortFunc(const pair<int,int> &a,const pair<int,int> &b){
 vector<pair<int, int>> reconstructQueue(vector<pair<int, int>>& people) {
     vector<pair<int,int>> res(people.size(),make_pair(0,0));
     sort(people.begin(),people.end(),sortFunc);
-
+    vector<pair<int,int>>::iterator it,its;
+    for(it=people.begin();it!=people.end();it++) {
+        
+        for(its=res.begin();its!=res.end();it++){
+                
+        }
+    }
     return people;
 }
 
