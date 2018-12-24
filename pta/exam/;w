@@ -1,0 +1,25 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<cstring>
+
+
+using namespace std;
+bool isMatch2(string s, string p) {
+        if (p.empty())
+            return s.empty();
+
+        bool firstMatch = !s.empty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
+
+        if (p.length() > 1 && p.charAt(1) == '*')
+            return isMatch2(s, p.substring(2)) || (firstMatch && isMatch2(s.substring(1), p));
+        else
+            return firstMatch && isMatch2(s.substring(1), p.substring(1));
+    }
+int n,m;
+string s,ss;
+
+int main(){
+    cin>>s>>ss;
+
+}
