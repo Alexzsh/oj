@@ -4,6 +4,7 @@
 #version:
 #history:
 #relate on:
+# 利用字典进行加速查找
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         res = {}
