@@ -1,24 +1,37 @@
-#include<iostream>
-using namespace std;
-int dp[30][50000];
-int n,m,z;
-int pri[30],cj[30];
-int main(){
-    cin>>n>>m;
-    for(int i = 1;i<=m;i++)
-    {
-        cin>>pri[i]>>cj[i];
-        cj[i]*=pri[i];
-    }
-    for(int i = 1;i<=m;i++)
-    {
-        for(int j=0;j<=n;j++)
-            dp[i][j]=dp[i-1][j];
-        for(int j=pri[i];j<=n;j++)
-        {
+#include <stdio.h>
+int fenshengzi(int a[], int n, int m, int left, int right)
+{
+    int number = 0, i, mid;
+    mid = (left + right) / 2;
+    for (i = 0; i < n; i++)
+        number = number + a[i] / mid;
 
-            dp[i][j]=max(dp[i][j],dp[i-1][j-pri[i]]+cj[i]);
-        }
+    if (left == right - 1)
+        return left;
+    else if (number >= m)
+        fenshengzi(a, n, m, mid, right);
+    else if (number < m)
+        fenshengzi(a, n, m, left, mid);
+}
+
+int main()
+{
+    int n, m, i, a[10000], number = 0;
+    long long all = 0, avg;
+    scanf("%d%d", &n, &m);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+        all = all + a[i];
     }
-    cout<<dp[m][n];
+    avg = all / m;
+    for (i = 0; i < n; i++)
+        number = number + a[i] / avg;
+
+    if (number == m)
+        printf("%.2f", (double)(avg));
+    else
+        printf("%.2f", (double)(fenshengzi(a, n, m, 0, avg)));
+
+    return 0;
 }
