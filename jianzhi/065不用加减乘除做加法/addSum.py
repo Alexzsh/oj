@@ -9,6 +9,9 @@ def add(num1,num2):
         if num2==0:
             break
     return res
+def g(num1):
+    return num1 if num1 <= 0x7FFFFFFF else ~(num1 ^ 0xFFFFFFFF)
 if __name__ == '__main__':
-    print(add(19,19))
+    print(g(0xffffffff))
+    print(~0)
     
