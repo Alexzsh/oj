@@ -12,6 +12,8 @@ def add(num1,num2):
 def g(num1):
     return num1 if num1 <= 0x7FFFFFFF else ~(num1 ^ 0xFFFFFFFF)
 if __name__ == '__main__':
+    # 溢出检验
+    
     print(g(0xffffffff))
     print(~0)
     

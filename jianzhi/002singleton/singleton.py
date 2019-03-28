@@ -61,28 +61,39 @@ def myTrue(a,b):
 def myFalse(a,b):
     return b()
 
-
+def decorate(x):
+    import time
+    def calcu():
+        start = time.time()
+        x()
+        print(time.time()-start)
+    return calcu
+@decorate
+def cal():
+    print(1)
+        
 def myif(judge,func1,func2):
     judge(func1,func2)
 
 if __name__ =='__main__':
-    a=1
-    b=2
-    f1=lambda :1
-    f2=lambda :2
-    if a>b:
-        f1()
-    else:
-        f2()
+    cal()
+    # a=1
+    # b=2
+    # f1=lambda :1
+    # f2=lambda :2
+    # if a>b:
+    #     f1()
+    # else:
+    #     f2()
 
 
 
 
-    print((lambda x,y:y*x(x,y-1) if y!=2 else 2)(lambda x,y:y*x(x,y-1) if y!=2 else 2,5))
-    # for i in range(10):
-    #     print('Thread id is {}'.format(i))
-    #     t = threading.Thread(target=testSingle(SingletonViaDoubleLock))
-    #     t.start()
-    #
-    # t.join()
+    # print((lambda x,y:y*x(x,y-1) if y!=2 else 2)(lambda x,y:y*x(x,y-1) if y!=2 else 2,5))
+    # # for i in range(10):
+    # #     print('Thread id is {}'.format(i))
+    # #     t = threading.Thread(target=testSingle(SingletonViaDoubleLock))
+    # #     t.start()
+    # #
+    # # t.join()
 
