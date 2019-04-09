@@ -6,20 +6,12 @@
 #relate on:
 # -*- coding:utf-8 -*-
 import copy
-
-
 class Solution:
-
-    # matrix类型为二维列表，需要返回列表
     def printMatrix(self, matrix):
-        # write code here1
-
-        cols = len(matrix[0])
+        cols = len(matrix[0])   
         rows = len(matrix)
-
         resCols = [[0]*cols]
         res = copy.deepcopy(matrix)
-
         resCol, resRow = 0, 0
         tempRow, tempCol = rows, cols
         sumNum = 0
