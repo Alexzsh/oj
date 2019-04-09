@@ -2,7 +2,6 @@ def func(nums):
     # nums=list(set(nums))
     res=0
     for i in nums:
-        print(nums)
         count=1
         nums.remove(i)
         left = i-1

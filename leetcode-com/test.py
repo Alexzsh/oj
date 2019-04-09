@@ -1,20 +1,38 @@
-seq = list(map(int,'101222001'))
-def getColor(i):
-    return seq[i]
-def swap(i,j):
-    seq[i],seq[j]=seq[j],seq[i]
-def func():
-    index = 0
-    li=['R','G','B']
-    color_index=[-3,-2,-1]
-    while index<len(seq):
-        while getColor(index)!=index%3:
-            color_index[getColor(index)] += 3
-            swap(index, color_index[getColor(index)])
-        if index>color_index[index%3]:
-            color_index[index%3]+=3
-        index+=1
-    print(seq)
+def func3():
+    n,m = map(int,input().split())
+    li = list(map(int,input().split()))
+    li.sort()
+    summ=0
+    i=0
+    while m>0 and i<n:
+        
+        
+        if max(li)==0:
+            print(0)
+        
+        if li[i]!=summ:
+            print(li[i]-summ)
+            summ=li[i]
+            m-=1    
+            i+=1
+        else:
+            i+=1
+            continue
+def func2():
+    m=input()
+    li=list(map(int,input().split()))
+    summ = 0
+    temp=0
+    for i in range(len(li)):
+        temp+=abs(summ+li[i])
+        summ+=li[i]
+    print(temp)
+def func1():
+    m,n = map(int,input().split())
+    i = m//(n+1)
+    j = m%(n+1)
+    if j!=0:
+        i+=1
+    print(n+i)
 if __name__ == '__main__':
-    func()
-    
+    func1()
