@@ -6,4 +6,5 @@ def func(A):
         B[i] *= B[i - 1] or 1
     return max(max(A), max(B))
 if __name__ == '__main__':
-    print(func([2, -3, -2, 4]))
+    print(func([-3,0,1,-2]))
+
