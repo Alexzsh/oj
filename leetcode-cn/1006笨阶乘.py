@@ -20,6 +20,7 @@ def func():
 #     res = ''.join(mul)
 #     return int(eval(res))
 def clumsy(N):
+    #寻找规律
     switch={
         1:lambda x: 1 if x==1 else N+2,
         2:lambda x: 2 if x==2 else N+2,
