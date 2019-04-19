@@ -13,6 +13,7 @@ class Solution:
     # 返回合并后列表
     def Merge(self, pHead1, pHead2):
         # write code here
+        # 递归实现
         if pHead1 == None or pHead2 == None:
             return pHead2 if pHead2!=None else pHead1 if pHead1 !=None else None
         pMerge=None

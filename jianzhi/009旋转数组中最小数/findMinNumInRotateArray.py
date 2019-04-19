@@ -26,6 +26,22 @@ class Solution:
                 right=mid
 
         return rotateArray[mid]
+    def func(self,num):
+        if not num:
+            return 0
+        
+        left=0
+        right=len(num)-1
+        while num[left]>=num[right]:
+            if right-left==1:
+                return num[right]
+            if num[left]==num[right] and num[left]==num[mid]:
+                return min(num[left:right+1])
+            mid=left+(right-left)>>1
+            if num[left]>num[mid]:
+                right=mid
+            else:
+                left=mid
 
 solution = Solution()
 

@@ -33,6 +33,7 @@ class SingletonViaDoubleLock(object):
     __instance_lock = threading.Lock()
 
     def __new__(cls, *args, **kwargs):
+        #当实例未创建时才加锁，提高效率
         if not cls.__instance:
             with cls.__instance_lock:
                 if not cls.__instance:
