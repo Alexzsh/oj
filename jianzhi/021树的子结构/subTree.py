@@ -31,4 +31,15 @@ class Solution:
         if p1.val!=p2.val:
             return False
         return self.func(p1.left,p2.left) and self.func(p1.right,p2.right)
+    def sub_tree(self,tree1,tree2):
+        # 递归判断
+        if tree1 and tree2:
+            if tree1.val==tree2.val:
+                return self.sub_tree(tree1.left,tree2.left) and self.sub_tree(t1.right,tree2.right)
+            else:
+                return self.sub_tree(tree1.left,tree2) or self.sub_tree(tree1.right,tree2)
+        if not tree1 and tree2:
+            return False
+        return True
+            
 

@@ -54,6 +54,6 @@ pNode2.right = pNode5
 
 
 S = Solution()
-print(S.pathSum(pNode1, 23))
+print(S.pathSum(pNode1, 22))
 # 测试用例：[1,-2,-3,1,3,-2,null,-1]  -1
 # 测试用例：[-2, None, -3] -5

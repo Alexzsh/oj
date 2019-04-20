@@ -17,6 +17,7 @@ class Solution:
             return self.recur(None,pHead)
 
     def recur(self,pHead,pNext):
+        #递归版
         nNext=pNext.next
         if not nNext:
             pNext.next=pHead
@@ -28,7 +29,7 @@ class Solution:
             return self.recur(pHead,pNext)
     def ReverseList(self, pHead):
         # write code here
-
+        #非递归版
         pCur = pHead
         pPre = None
         pRes = None

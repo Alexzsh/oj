@@ -16,7 +16,6 @@ class Solution:
         # 递归实现
         if pHead1 == None or pHead2 == None:
             return pHead2 if pHead2!=None else pHead1 if pHead1 !=None else None
-        pMerge=None
         if pHead1.val<pHead2.val:
             pMerge=pHead1
             pMerge.next = self.Merge(pHead1.next,pHead2)
