@@ -18,5 +18,8 @@ def func(s):
                 dp[i][j]=max(dp[i-1][j],dp[i][j+1])
     print(dp[l-1][0])
 if __name__ == '__main__':
-    func('abcddcgg')
+    # func('abcddcgg')
+    def f(n):
+        return n+f(n-1) if n>1 else 1
+    print(f(15))
     
