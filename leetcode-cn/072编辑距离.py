@@ -1,5 +1,5 @@
 class Solution:
-    def minDistance(self, word1: str, word2: str) -> int:
+    def minDistance(self, word1, word2):
         l1=len(word1)
         l2=len(word2)
         dp=[[i+j for i in range(l2+1)] for j in range(l1+1)]
