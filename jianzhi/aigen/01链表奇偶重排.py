@@ -18,5 +18,5 @@ def func(root):
     odd.next = first_even
     return root
 if __name__ == '__main__':
-    func()
+    func(None)
     
