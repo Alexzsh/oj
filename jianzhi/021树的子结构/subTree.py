@@ -35,7 +35,7 @@ class Solution:
         # 递归判断
         if tree1 and tree2:
             if tree1.val==tree2.val:
-                return self.sub_tree(tree1.left,tree2.left) and self.sub_tree(t1.right,tree2.right)
+                return self.sub_tree(tree1.left,tree2.left) and self.sub_tree(tree1.right,tree2.right)
             else:
                 return self.sub_tree(tree1.left,tree2) or self.sub_tree(tree1.right,tree2)
         if not tree1 and tree2:
